@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(raylib_template C)
+project(snake C)
 
 set(CMAKE_C_STANDARD 99)
 
@@ -9,5 +9,7 @@ set(BUILD_GAMES    OFF CACHE BOOL "" FORCE) # or games
 
 add_subdirectory(libs/raylib)
 
-add_executable(raylib_template src/main.c)
-target_link_libraries(raylib_template PRIVATE raylib)
+set(SRC_FILES src/main.c src/management/grid-manager.c)
+
+add_executable(snake ${SRC_FILES})
+target_link_libraries(snake PRIVATE raylib)
