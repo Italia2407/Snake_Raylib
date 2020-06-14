@@ -7,6 +7,8 @@
 #ifndef SNAKE_GRID_MANAGER_H
 #define SNAKE_GRID_MANAGER_H
 
+extern Color GridLineColour;
+
 Vector2 GridToScreenSpace(Vector2 position);
 
 void DrawGridLines();
