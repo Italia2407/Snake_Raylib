@@ -24,6 +24,13 @@ Snake InitSnake(Vector2 position, SnakeDirection direction, Color colour)
 
 void UpdateSnake(Snake* snake)
 {
+	// Get tail location in case snake has to grow
+	Vector2 tailPosition;
+	if (snake-> length >= 1)
+		tailPosition = snake->segmentPositions[snake->length-1];
+	else
+		tailPosition = snake->headPosition;
+	
 	// Movement
 	//------------------------------------------------------------------------------------------------------------------
 	// Change movement direction

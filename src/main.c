@@ -7,7 +7,7 @@ int main(void)
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Snake");
     SetTargetFPS(FPS_CAP);
     
-    Snake snake = InitSnake(Vector2Zero(), SD_RIGHT, BLUE);
+    Snake snake = InitSnake((Vector2){7, 0}, SD_RIGHT, BLUE);
 
     // Main game loop
     while (!WindowShouldClose())
