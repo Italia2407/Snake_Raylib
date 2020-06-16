@@ -9,7 +9,9 @@ set(BUILD_GAMES    OFF CACHE BOOL "" FORCE) # or games
 
 add_subdirectory(libs/raylib)
 
-set(SRC_FILES src/main.c src/management/grid-manager.c src/objects/snake.c)
+set(SRC_FILES src/main.c)
+set(SRC_FILES_OBJ src/objects/snake.c)
+set(SRC_FILES_MGT src/management/grid-manager.c)
 
-add_executable(snake ${SRC_FILES})
+add_executable(snake ${SRC_FILES} ${SRC_FILES_OBJ} ${SRC_FILES_MGT})
 target_link_libraries(snake PRIVATE raylib)
