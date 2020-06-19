@@ -18,6 +18,9 @@
 
 #define ASSET_PATH "../assets/"
 
+extern bool GameOver;
+
 bool Vector2Compare(Vector2 v1, Vector2 v2);
+int PositiveModulo(int a, int b);
 
 #endif //SNAKE_GLOBALS_H
