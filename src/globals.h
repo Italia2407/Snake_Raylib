@@ -18,4 +18,6 @@
 
 #define ASSET_PATH "../assets/"
 
+bool Vector2Compare(Vector2 v1, Vector2 v2);
+
 #endif //SNAKE_GLOBALS_H
