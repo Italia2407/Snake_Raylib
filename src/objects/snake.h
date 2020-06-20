@@ -21,6 +21,7 @@ typedef enum SnakeDirection
 typedef struct Snake
 {
 	SnakeDirection direction;
+	SnakeDirection nextDirection;
 	
 	Vector2 headPosition;
 	Vector2 segmentPositions[MAX_SNAKE_LENGTH];

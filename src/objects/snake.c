@@ -15,6 +15,7 @@ Snake InitSnake(Vector2 position, SnakeDirection direction, Color colour)
 	
 	newSnake.headPosition = position;
 	newSnake.direction = direction;
+	newSnake.nextDirection = direction;
 	newSnake.colour = colour;
 	
 	newSnake.headPosition.x = (int)newSnake.headPosition.x % CELLS_HORIZONTAL;
@@ -44,19 +45,19 @@ void UpdateSnake(Snake* snake)
 	// Change movement direction
 	if (IsKeyPressed(KEY_W) && (snake->direction != SD_DOWN))
 	{
-		snake->direction = SD_UP;
+		snake->nextDirection = SD_UP;
 	}
 	if (IsKeyPressed(KEY_S) && (snake->direction != SD_UP))
 	{
-		snake->direction = SD_DOWN;
+		snake->nextDirection = SD_DOWN;
 	}
 	if (IsKeyPressed(KEY_A) && (snake->direction != SD_RIGHT))
 	{
-		snake->direction = SD_LEFT;
+		snake->nextDirection = SD_LEFT;
 	}
 	if (IsKeyPressed(KEY_D) && (snake->direction != SD_LEFT))
 	{
-		snake->direction = SD_RIGHT;
+		snake->nextDirection = SD_RIGHT;
 	}
 	
 	if (FrameCount > MOVEMENT_FRAME_BUFFER)
@@ -71,7 +72,7 @@ void UpdateSnake(Snake* snake)
 		snake->segmentPositions[0] = snake->headPosition;
 		
 		// Move head
-		switch (snake->direction)
+		switch (snake->nextDirection)
 		{
 			case SD_UP:
 			{
@@ -97,6 +98,8 @@ void UpdateSnake(Snake* snake)
 		
 		snake->headPosition.x = PositiveModulo((int)snake->headPosition.x, CELLS_HORIZONTAL);
 		snake->headPosition.y = PositiveModulo((int)snake->headPosition.y, CELLS_VERTICAL);
+		
+		snake->direction = snake->nextDirection;
 	}
 	
 	// Check if it collided with itself
