@@ -8,6 +8,7 @@
 #define SNAKE_SNAKE_H
 
 #define MAX_SNAKE_LENGTH (57)
+//#define MAX_SNAKE_LENGTH (4) // Debug length
 
 typedef enum SnakeDirection
 {

@@ -3,7 +3,7 @@
 #include "objects/snake.h"
 #include "objects/edible.h"
 
-#define EDIBLE_SPAWN_FRAME_BUFFER (180)
+#define EDIBLE_SPAWN_FRAME_BUFFER (300)
 static int SpawnFrameBuffer = 0;
 
 int main(void)
@@ -38,9 +38,9 @@ int main(void)
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
-        
+	
+		DrawEdibles();
         DrawSnake(snake);
-        DrawEdibles();
         DrawGridLines();
         
         if (GameOver)

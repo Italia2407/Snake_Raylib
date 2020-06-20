@@ -41,7 +41,7 @@ bool CheckEdiblesCollision(Snake snake)
 
 void DrawEdibles()
 {
-	for (int i = 0; i < MAX_EDIBLE_COUNT; i++)
+	for (int i = 0; i < EdiblesCount; i++)
 	{
 		Vector2 screenSpace = GridToScreenSpace(Edibles[i].position);
 		Rectangle rect = {
