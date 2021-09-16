@@ -72,6 +72,8 @@ void UpdateSnake(Snake* snake)
 		snake->segmentPositions[0] = snake->headPosition;
 		
 		// Move head
+		snake->direction = snake->nextDirection;
+		
 		switch (snake->nextDirection)
 		{
 			case SD_UP:
@@ -99,7 +101,7 @@ void UpdateSnake(Snake* snake)
 		snake->headPosition.x = PositiveModulo((int)snake->headPosition.x, CELLS_HORIZONTAL);
 		snake->headPosition.y = PositiveModulo((int)snake->headPosition.y, CELLS_VERTICAL);
 		
-		snake->direction = snake->nextDirection;
+		//snake->direction = snake->nextDirection;
 	}
 	
 	// Check if it collided with itself
